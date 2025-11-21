@@ -1,153 +1,607 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STAIN - The Play | One Night Only</title>
-    <meta name="description" content="A captivating and heartbreaking theatrical production. One night only.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STAIN - The Play | One Night Only</title>
+  <meta name="description" content="A captivating and heartbreaking theatrical production. One night only." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=the_seasons@400&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="flipbook.css" />
 </head>
+
 <body>
+  <!-- Splash Screen / Page 1 -->
+  <div id="splash-screen">
+    <div class="splash-image-container">
+      <img src="/stain-cover.JPG" id="splash-poster" alt="Stain Cover" />
+      <video id="splash-video" playsinline muted preload="auto">
+        <source src="/Tissue_Paper_Unfolding_Video_Generation.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="splash-overlay">
+      <button id="enter-site-btn" aria-label="Enter Site">
+        <span class="enter-text">Enter</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Content / Page 2 (Initially Hidden) -->
+  <main id="main-content" class="hidden">
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#home" class="logo">STAIN</a>
-            <button class="mobile-menu-toggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#be-a-part" class="nav-link">Be A Part</a></li>
-                <li><a href="#impact" class="nav-link">The Impact</a></li>
-                <li><a href="#cast-crew" class="nav-link">Cast & Crew</a></li>
-            </ul>
-        </div>
+      <div class="nav-container">
+        <a href="#" data-target="home" class="logo">STAIN</a>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="#" data-target="home" class="nav-link active">Home</a></li>
+          <li><a href="#" data-target="about" class="nav-link">About</a></li>
+          <li><a href="#" data-target="cast-crew" class="nav-link">Cast & Crew</a></li>
+          <li><a href="#" data-target="gallery" class="nav-link">Gallery</a></li>
+          <li><a href="#" data-target="tickets" class="nav-link">Tickets</a></li>
+          <li><a href="#" data-target="merch" class="nav-link">Merch</a></li>
+        </ul>
+      </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
+    <div id="book-container">
+      <!-- Page 1: Hero (Cover) -->
+      <div class="page" id="home">
+        <section class="hero">
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
             <div class="hero-text">
-                <h1 class="hero-title">
-                    <span class="title-main">STAIN</span>
-                    <span class="title-sub">The Play</span>
-                </h1>
-                <p class="hero-tagline">ONE NIGHT ONLY</p>
-                <a href="https://thetanknyc.org" target="_blank" rel="noopener noreferrer" class="cta-button">
-                    Get Tickets
-                    <svg class="button-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Quote Section -->
-    <section class="quote-section">
-        <div class="container">
-            <blockquote class="featured-quote">
-                <svg class="quote-icon" width="48" height="48" viewBox="0 0 48 48" fill="none">
-                    <path d="M12 21C12 15.477 16.477 11 22 11v4c-3.314 0-6 2.686-6 6 0 1.657 1.343 3 3 3h3v9h-9v-9c0-1.657-1.343-3-3-3zm18 0c0-5.523 4.477-10 10-10v4c-3.314 0-6 2.686-6 6 0 1.657 1.343 3 3 3h3v9h-9v-9c0-1.657-1.343-3-3-3z" fill="currentColor" opacity="0.1"/>
+              <h1 class="hero-title">
+                <span class="title-main">STAIN</span>
+                <span class="title-sub">The Play</span>
+              </h1>
+              <div class="hero-tagline">
+                <span class="hero-credit-label">By</span>
+                <span class="hero-credit-names">Negin Poure & Hera Güneş Barlowe</span>
+              </div>
+              <a href="#" data-target="about" class="cta-button">
+                Learn More
+                <svg class="button-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
                 </svg>
-                <p class="quote-text">Captivating and heartbreaking</p>
-                <cite class="quote-author">— Rodolfo Pedroni</cite>
-            </blockquote>
-        </div>
-    </section>
-
-    <!-- Image Gallery Section -->
-    <section class="gallery-section">
-        <div class="container">
-            <h2 class="section-title">From The Stage</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <div class="gallery-image-placeholder">
-                        <span>Production Photo 1</span>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image-placeholder">
-                        <span>Production Photo 2</span>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image-placeholder">
-                        <span>Production Photo 3</span>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image-placeholder">
-                        <span>Production Photo 4</span>
-                    </div>
-                </div>
+              </a>
             </div>
-        </div>
-    </section>
+          </div>
+        </section>
+      </div>
 
-    <!-- Be A Part Section -->
-    <section class="content-section" id="be-a-part">
-        <div class="container">
-            <h2 class="section-title">Be A Part</h2>
-            <div class="content-block">
-                <p>Join us for this exclusive theatrical experience. Your support makes art like this possible.</p>
-            </div>
+      <!-- Page 2: About (formerly Impact) -->
+      <div class="page" id="about">
+        <div class="about-image-container">
+          <img src="/stain-locker.jpg" alt="Stain Locker" class="about-image" />
+          <div class="scroll-hint">
+            <span>Scroll for more</span>
+            <div class="scroll-line"></div>
+          </div>
         </div>
-    </section>
+        <img src="/stain-more-lockers.jpg" alt="More Lockers" class="about-image" />
+        <img src="/stain-woman.jpg" alt="Woman" class="about-image" />
+        <img src="/stain-cast.jpg" alt="Cast" class="about-image" />
+        <img src="/stain-journey.jpg" alt="Journey" class="about-image" />
+      </div>
 
-    <!-- The Impact Section -->
-    <section class="content-section dark-section" id="impact">
-        <div class="container">
-            <h2 class="section-title">The Impact</h2>
-            <div class="content-block">
-                <p>STAIN explores themes that resonate deeply with contemporary audiences, creating conversations that extend beyond the stage.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Cast & Crew Section -->
-    <section class="content-section" id="cast-crew">
-        <div class="container">
+      <!-- Page 3: Cast & Crew -->
+      <div class="page" id="cast-crew">
+        <section class="cast-crew-section">
+          <div class="container">
             <h2 class="section-title">Cast & Crew</h2>
-            <div class="content-block">
-                <p>A talented ensemble of artists bringing this powerful story to life.</p>
-            </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
+            <div class="cast-grid">
+              <article class="cast-card">
+                <div class="cast-photo">
+                  <img src="/cast/Negin Poure AKA Melody.jpg" alt="Negin Poure" />
+                  <div class="cast-info-overlay">
+                    <p class="click-to-read">Click to read bio</p>
+                  </div>
+                  <div class="cast-bio" style="display: none">
+                    <p><strong>Playwright & MELODY</strong></p>
+                    <p>
+                      Negin Poure is an Iranian-born actress, writer, and model based in
+                      New York City, making her debut as the playwright of Stain. A
+                      graduate of the American Academy of Dramatic Arts and a member of
+                      the Actors Society. Stain marks not only her first play, but the
+                      first time she steps onto the stage with her own words.
+                    </p>
+                    <p>
+                      Most recent credits include: Flighty-short (Sasha), Status Quo
+                      (Isabel, Marrie), Midsummer's night dream (Helena), The Studio
+                      Ghost-short (Ghost).
+                    </p>
+                    <p>
+                      <a href="http://www.neginpoure.com" target="_blank"
+                        rel="noopener noreferrer">www.neginpoure.com</a>
+                    </p>
+                  </div>
+                </div>
+                <div class="cast-meta">
+                  <p class="cast-role">Playwright & Actor</p>
+                  <h3>Negin Poure</h3>
+                  <p class="cast-character">as Melody</p>
+                </div>
+              </article>
+              <article class="cast-card">
+                <div class="cast-photo">
+                  <img src="/cast/HERA BARLOWE AKA DYLON- w.JPEG" alt="Hera Güneş Barlowe" />
+                  <div class="cast-info-overlay">
+                    <p class="click-to-read">Click to read bio</p>
+                  </div>
+                  <div class="cast-bio" style="display: none">
+                    <p><strong>Playwright & DYLON</strong></p>
+                    <p>
+                      Hera is a Turkish actor, artist, activist born & raised in
+                      İstanbul, now based in New York City. From a young age, Hera has
+                      always felt a strong intuition to advocate against injustices
+                      affecting people, animals, and the environment, so this project
+                      specifically means a lot to her, especially at times like these,
+                      where women's rights are under attack. She is a graduate of the
+                      American Academy of Dramatic Arts in Manhattan. In her free time,
+                      she loves to travel and paint.
+                    </p>
+                    <p>
+                      <a href="http://www.herabarlowe.com" target="_blank"
+                        rel="noopener noreferrer">www.herabarlowe.com</a>
+                    </p>
+                  </div>
+                </div>
+                <div class="cast-meta">
+                  <p class="cast-role">Playwright & Actor</p>
+                  <h3>Hera Güneş Barlowe</h3>
+                  <p class="cast-character">as Dylon</p>
+                </div>
+              </article>
+              <article class="cast-card">
+                <div class="cast-photo">
+                  <img src="/cast/Aaron Going AKA Mr. Pickleton.JPEG" alt="Aaron Going" />
+                  <div class="cast-info-overlay">
+                    <p class="click-to-read">Click to read bio</p>
+                  </div>
+                  <div class="cast-bio" style="display: none">
+                    <p><strong>MR. PICKLETON</strong></p>
+                    <p>
+                      Aaron Going is an actor who was born and buttered in Billings, MT.
+                      He recently graduated as a member of the American Academy of
+                      Dramatic Arts 2024-2025 Company program and is a proud member of
+                      the Actors Society. Aaron could not be more pleased to join this
+                      team of creative juggernauts as he makes his Off-Off-Broadway
+                      debut. He hopes to bring a little more laughter and light to the
+                      world through this work. When not on set or on stage, Aaron enjoys
+                      making soup, painting, and serenading the pigeons outside his
+                      window.
+                    </p>
+                    <p>
+                      <a href="http://www.aarongoing.com" target="_blank"
+                        rel="noopener noreferrer">www.aarongoing.com</a>
+                    </p>
+                  </div>
+                </div>
+                <div class="cast-meta">
+                  <p class="cast-role">Actor</p>
+                  <h3>Aaron Going</h3>
+                  <p class="cast-character">as Mr. Pickleton</p>
+                </div>
+              </article>
+              <article class="cast-card">
+                <div class="cast-photo">
+                  <img src="/cast/Alexander Shayeb AKA Tyler.JPEG" alt="Alexander Shayeb" />
+                  <div class="cast-info-overlay">
+                    <p class="click-to-read">Click to read bio</p>
+                  </div>
+                  <div class="cast-bio" style="display: none">
+                    <p><strong>TYLER BROOKS</strong></p>
+                    <p>
+                      Alexander Shayeb (he/him) is a Manhattan-based actor, director,
+                      and fight choreographer. He has recently graduated from Fordham
+                      University's Theatre Program with a BA in performance. At Fordham,
+                      Alexander played notable roles such as James in Kentucky, The
+                      Father/The Moon in Blood Wedding, and Soldier #1 in Aulis. He has
+                      also been in student films at NYU and spends much of his time
+                      watching as many movies as he can.
+                    </p>
+                    <p>
+                      <a href="https://www.instagram.com/your_instagram_handle" target="_blank"
+                        rel="noopener noreferrer">Instagram</a>
+                    </p>
+                  </div>
+                </div>
+                <div class="cast-meta">
+                  <p class="cast-role">Actor</p>
+                  <h3>Alexander Shayeb</h3>
+                  <p class="cast-character">as Tyler</p>
+                </div>
+              </article>
+              <article class="cast-card">
+                <div class="cast-photo">
+                  <img src="/cast/Headshot_Kori_Dezena_Andrade_AKA_Jimothy.JPEG" alt="Kori Dezeña-Andrade" />
+                  <div class="cast-info-overlay">
+                    <p class="click-to-read">Click to read bio</p>
+                  </div>
+                  <div class="cast-bio" style="display: none">
+                    <p><strong>JIMOTHY HILL</strong></p>
+                    <p>
+                      Kori Dezena-Andrade is a Brazilian-American actor based in NYC.
+                      After graduating from Fordham University with a major in Film & TV
+                      and a minor in Theatre, he is excited to be joining the cast of
+                      Stain as Jimmothy! Past credits include Into The Woods
+                      (Narrator/Mysterious Man), Spring Awakening (Adult Man), Tuck
+                      Everlasting (Angus Tuck), 9 To 5 (Mr. Tinsworthy), and Carrie The
+                      Musical (Mr. Stephens).
+                    </p>
+                  </div>
+                </div>
+                <div class="cast-meta">
+                  <p class="cast-role">Actor</p>
+                  <h3>Kori Dezeña-Andrade</h3>
+                  <p class="cast-character">as Jimmothy</p>
+                </div>
+              </article>
+              <article class="cast-card">
+                <div class="cast-photo">
+                  <img src="/cast/Megan Osyen AKA Alex.PNG" alt="Megan Osyen" />
+                  <div class="cast-info-overlay">
+                    <p class="click-to-read">Click to read bio</p>
+                  </div>
+                  <div class="cast-bio" style="display: none">
+                    <p><strong>ALEX VOSS</strong></p>
+                    <p>
+                      Megan Osyen is an English/Welsh actress based in New York City.
+                      Originally from London, she spent part of her childhood in Moscow
+                      and is a fluent Russian speaker. Since graduating from The
+                      American Academy of Dramatic Arts, she has appeared in a music
+                      video and five short films set to premiere at festivals in the
+                      coming year. Megan is currently in pre-production for a feature
+                      film slated for 2026, and is really looking forward to making her
+                      Off-Off-Broadway debut in "Stain", followed by a play set for
+                      December 2025.
+                    </p>
+                    <p>
+                      <a href="http://www.meganosyen.com" target="_blank"
+                        rel="noopener noreferrer">www.meganosyen.com</a>
+                    </p>
+                  </div>
+                </div>
+                <div class="cast-meta">
+                  <p class="cast-role">Actor</p>
+                  <h3>Megan Osyen</h3>
+                  <p class="cast-character">as Alex</p>
+                </div>
+              </article>
+              <article class="cast-card director-card">
+                <div class="cast-photo">
+                  <img src="/cast/daniely_martinez_director.JPEG" alt="Daniely Martinez" />
+                  <div class="cast-info-overlay">
+                    <p class="click-to-read">Click to read bio</p>
+                  </div>
+                  <div class="cast-bio" style="display: none">
+                    <p><strong>PRODUCTION DIRECTOR</strong></p>
+                    <p>
+                      Daniely Martins is an actress, writer and director, born and
+                      raised in Brazil and now based in New York City. She has always
+                      had the passion for moving people through words and a need for
+                      physical expression. Her pull towards discoveries brought her to
+                      live in Portugal, Germany and France, where she collected a great
+                      deal of experiences in human connection and theater studies.
+                      Daniely's most recent credits include the direction of Someone
+                      ExtraordinariX at The Players Theater and her performance in the
+                      devised project titled Night Witches, by the PickPocket Players.
+                      Her training consists in the two year conservatory program at The
+                      American Academy of Dramatic Arts, in New York, and the three year
+                      extensive Acting in English program at Cours Florent, in Paris,
+                      France.
+                    </p>
+                  </div>
+                </div>
+                <div class="cast-meta">
+                  <p class="cast-role">Director</p>
+                  <h3>Daniely Martinez</h3>
+                  <p class="cast-character">Production Director</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Page 4: Gallery -->
+      <div class="page" id="gallery">
+        <section class="gallery-section">
+          <div class="container">
+            <div class="gallery-book">
+              <div class="gallery-grid">
+                <figure class="gallery-photo">
+                  <img src="public/team/IMG_9819%202.JPG" alt="Cast huddled backstage in the red glow of the wings" />
+                  <figcaption class="sr-only">
+                    Pre-show rituals tucked behind the set.
+                  </figcaption>
+                </figure>
+                <figure class="gallery-photo">
+                  <img src="public/team/IMG_9820.jpg" alt="Performer framed in crimson light on stage" />
+                  <figcaption class="sr-only">
+                    Stage light catches every inhale.
+                  </figcaption>
+                </figure>
+                <figure class="gallery-photo">
+                  <img src="public/team/IMG_9821.JPG" alt="Cast members sharing a quiet moment offstage" />
+                  <figcaption class="sr-only">
+                    Quiet conspiracies before the cue.
+                  </figcaption>
+                </figure>
+                <figure class="gallery-photo">
+                  <img src="public/team/IMG_9823.jpg" alt="Hands adjusting wardrobe details" />
+                  <figcaption class="sr-only">
+                    Hands on fabric, breath steady.
+                  </figcaption>
+                </figure>
+                <figure class="gallery-photo">
+                  <img src="public/team/IMG_9824%202.jpg" alt="The ensemble framed against lockers and stage haze" />
+                  <figcaption class="sr-only">
+                    The hallway hum before the house opens.
+                  </figcaption>
+                </figure>
+                <figure class="gallery-photo">
+                  <img src="public/team/IMG_9825%202.JPG" alt="Actor leaning into a spotlight" />
+                  <figcaption class="sr-only">
+                    Heat from the spotlight, eyes locked.
+                  </figcaption>
+                </figure>
+                <figure class="gallery-photo">
+                  <img src="public/team/IMG_9837.JPG" alt="Two actors mid-dialogue in rehearsal blocking" />
+                  <figcaption class="sr-only">
+                    Blocking, then breaking into laughter.
+                  </figcaption>
+                </figure>
+                <figure class="gallery-photo">
+                  <img src="public/team/IMG_9839.JPG" alt="Performer looking back toward the audience seats" />
+                  <figcaption class="sr-only">
+                    Checking the empty seats before the rush.
+                  </figcaption>
+                </figure>
+                <figure class="gallery-photo">
+                  <img src="public/team/IMG_9842.JPG" alt="Cast gathered near the stage door" />
+                  <figcaption class="sr-only">
+                    Everyone finds the light together.
+                  </figcaption>
+                </figure>
+                <figure class="gallery-photo">
+                  <img src="public/team/IMG_8353.JPG" alt="Crew capturing video and photos of the scene" />
+                  <figcaption class="sr-only">
+                    Documenting the chaos and the calm.
+                  </figcaption>
+                </figure>
+                <figure class="gallery-photo">
+                  <img src="public/team/IMG_8359.JPG" alt="Performer centered between props in a moody frame" />
+                  <figcaption class="sr-only">
+                    Props, posture, and a held breath.
+                  </figcaption>
+                </figure>
+                <figure class="gallery-photo">
+                  <img src="public/team/IMG_0254.jpg" alt="Cast sharing a laugh backstage" />
+                  <figcaption class="sr-only">
+                    A burst of laughter that never made script.
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Page 5: Tickets -->
+      <div class="page" id="tickets">
+        <section class="tickets-section">
+          <div class="locker-vents locker-vents-top"></div>
+          <div class="locker-vents locker-vents-bottom"></div>
+          <div class="container tickets-container">
+            <div class="tickets-card">
+              <h2 class="section-title">Tickets</h2>
+              <p class="tickets-copy">Reserve your seat for STAIN</p>
+              <a class="tickets-button" href="https://thetanknyc.org" target="_blank" rel="noopener noreferrer">Get
+                Tickets</a>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Page 6: Merch -->
+      <div class="page" id="merch">
+        <section class="merch-section">
+          <div class="container">
+            <h2 class="section-title">Merch</h2>
+            <p class="merch-intro">
+              Limited-run keepsakes inspired by STAIN. Coming soon.
+            </p>
+            <div class="merch-grid">
+              <!-- Dark -->
+              <div class="merch-item">
+                <div class="merch-card">
+                  <div class="merch-image-container carousel-container">
+                    <div class="carousel-track">
+                      <img src="public/dark/1.jpg" alt="Dark Handkerchief 1" class="carousel-slide active" />
+                      <img src="public/dark/2.jpg" alt="Dark Handkerchief 2" class="carousel-slide" />
+                      <img src="public/dark/3.jpg" alt="Dark Handkerchief 3" class="carousel-slide" />
+                      <img src="public/dark/4.jpg" alt="Dark Handkerchief 4" class="carousel-slide" />
+                      <img src="public/dark/5.jpg" alt="Dark Handkerchief 5" class="carousel-slide" />
+                      <img src="public/dark/6.jpg" alt="Dark Handkerchief 6" class="carousel-slide" />
+                      <img src="public/dark/7.jpg" alt="Dark Handkerchief 7" class="carousel-slide" />
+                    </div>
+                    <button class="carousel-btn prev" aria-label="Previous image">&lt;</button>
+                    <button class="carousel-btn next" aria-label="Next image">&gt;</button>
+                    <div class="carousel-dots">
+                      <span class="dot active" data-index="0"></span>
+                      <span class="dot" data-index="1"></span>
+                      <span class="dot" data-index="2"></span>
+                      <span class="dot" data-index="3"></span>
+                      <span class="dot" data-index="4"></span>
+                      <span class="dot" data-index="5"></span>
+                      <span class="dot" data-index="6"></span>
+                    </div>
+                  </div>
+                  <h3>Custom Handkerchief - Dark</h3>
+                  <p>Hand-embroidered custom handkerchief in dark tones.</p>
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="merch-buy-btn">Buy on Etsy</a>
+                </div>
+              </div>
+
+              <!-- Pink -->
+              <div class="merch-item">
+                <div class="merch-card">
+                  <div class="merch-image-container carousel-container">
+                    <div class="carousel-track">
+                      <img src="public/pink/1.jpg" alt="Pink Handkerchief 1" class="carousel-slide active" />
+                      <img src="public/pink/2.jpg" alt="Pink Handkerchief 2" class="carousel-slide" />
+                      <img src="public/pink/3.jpg" alt="Pink Handkerchief 3" class="carousel-slide" />
+                      <img src="public/pink/4.jpg" alt="Pink Handkerchief 4" class="carousel-slide" />
+                      <img src="public/pink/5.jpg" alt="Pink Handkerchief 5" class="carousel-slide" />
+                      <img src="public/pink/6.jpg" alt="Pink Handkerchief 6" class="carousel-slide" />
+                      <img src="public/pink/7.jpg" alt="Pink Handkerchief 7" class="carousel-slide" />
+                      <img src="public/pink/8.jpg" alt="Pink Handkerchief 8" class="carousel-slide" />
+                      <img src="public/pink/9.jpg" alt="Pink Handkerchief 9" class="carousel-slide" />
+                      <img src="public/pink/10.jpg" alt="Pink Handkerchief 10" class="carousel-slide" />
+                    </div>
+                    <button class="carousel-btn prev" aria-label="Previous image">&lt;</button>
+                    <button class="carousel-btn next" aria-label="Next image">&gt;</button>
+                    <div class="carousel-dots">
+                      <span class="dot active" data-index="0"></span>
+                      <span class="dot" data-index="1"></span>
+                      <span class="dot" data-index="2"></span>
+                      <span class="dot" data-index="3"></span>
+                      <span class="dot" data-index="4"></span>
+                      <span class="dot" data-index="5"></span>
+                      <span class="dot" data-index="6"></span>
+                      <span class="dot" data-index="7"></span>
+                      <span class="dot" data-index="8"></span>
+                      <span class="dot" data-index="9"></span>
+                    </div>
+                  </div>
+                  <h3>Custom Handkerchief - Pink</h3>
+                  <p>Hand-embroidered custom handkerchief in pink tones.</p>
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="merch-buy-btn">Buy on Etsy</a>
+                </div>
+              </div>
+
+              <!-- Purple -->
+              <div class="merch-item">
+                <div class="merch-card">
+                  <div class="merch-image-container carousel-container">
+                    <div class="carousel-track">
+                      <img src="public/purple/1.jpg" alt="Purple Handkerchief 1" class="carousel-slide active" />
+                      <img src="public/purple/2.jpg" alt="Purple Handkerchief 2" class="carousel-slide" />
+                      <img src="public/purple/3.jpg" alt="Purple Handkerchief 3" class="carousel-slide" />
+                      <img src="public/purple/4.jpg" alt="Purple Handkerchief 4" class="carousel-slide" />
+                      <img src="public/purple/5.jpg" alt="Purple Handkerchief 5" class="carousel-slide" />
+                    </div>
+                    <button class="carousel-btn prev" aria-label="Previous image">&lt;</button>
+                    <button class="carousel-btn next" aria-label="Next image">&gt;</button>
+                    <div class="carousel-dots">
+                      <span class="dot active" data-index="0"></span>
+                      <span class="dot" data-index="1"></span>
+                      <span class="dot" data-index="2"></span>
+                      <span class="dot" data-index="3"></span>
+                      <span class="dot" data-index="4"></span>
+                    </div>
+                  </div>
+                  <h3>Custom Handkerchief - Purple</h3>
+                  <p>Hand-embroidered custom handkerchief in purple tones.</p>
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="merch-buy-btn">Buy on Etsy</a>
+                </div>
+              </div>
+
+              <!-- Blue -->
+              <div class="merch-item">
+                <div class="merch-card">
+                  <div class="merch-image-container carousel-container">
+                    <div class="carousel-track">
+                      <img src="public/blue/1.jpg" alt="Blue Handkerchief 1" class="carousel-slide active" />
+                      <img src="public/blue/2.jpg" alt="Blue Handkerchief 2" class="carousel-slide" />
+                      <img src="public/blue/3.jpg" alt="Blue Handkerchief 3" class="carousel-slide" />
+                      <img src="public/blue/4.jpg" alt="Blue Handkerchief 4" class="carousel-slide" />
+                      <img src="public/blue/5.jpg" alt="Blue Handkerchief 5" class="carousel-slide" />
+                      <img src="public/blue/6.jpg" alt="Blue Handkerchief 6" class="carousel-slide" />
+                    </div>
+                    <button class="carousel-btn prev" aria-label="Previous image">&lt;</button>
+                    <button class="carousel-btn next" aria-label="Next image">&gt;</button>
+                    <div class="carousel-dots">
+                      <span class="dot active" data-index="0"></span>
+                      <span class="dot" data-index="1"></span>
+                      <span class="dot" data-index="2"></span>
+                      <span class="dot" data-index="3"></span>
+                      <span class="dot" data-index="4"></span>
+                      <span class="dot" data-index="5"></span>
+                    </div>
+                  </div>
+                  <h3>Custom Handkerchief - Blue</h3>
+                  <p>Hand-embroidered custom handkerchief in blue tones.</p>
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="merch-buy-btn">Buy on Etsy</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Footer moved to last page -->
+        <footer class="footer">
+          <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">
-                    <h3>STAIN</h3>
-                    <p>The Play</p>
-                </div>
-                <div class="footer-social">
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.25a1.25 1.25 0 0 0-2.5 0 1.25 1.25 0 0 0 2.5 0zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z" fill="currentColor"/>
-                        </svg>
-                    </a>
-                </div>
+              <div class="footer-logo">
+                <h3>STAIN</h3>
+                <p>The Play</p>
+              </div>
+              <div class="footer-social">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link"
+                  aria-label="Instagram">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.25a1.25 1.25 0 0 0-2.5 0 1.25 1.25 0 0 0 2.5 0zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"
+                      fill="currentColor" />
+                  </svg>
+                </a>
+              </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 STAIN - The Play. All rights reserved.</p>
+              <p>&copy; 2024 STAIN - The Play. All rights reserved.</p>
             </div>
-        </div>
-    </footer>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </main>
 
-    <script src="script.js"></script>
+  <!-- Cast Modal -->
+  <div class="cast-modal" id="cast-modal">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close" aria-label="Close modal">
+        &times;
+      </button>
+      <div class="modal-body">
+        <div class="modal-photo">
+          <img id="modal-img" src="" alt="" />
+        </div>
+        <div class="modal-info">
+          <p class="modal-role" id="modal-role"></p>
+          <h2 class="modal-name" id="modal-name"></h2>
+          <p class="modal-character" id="modal-character"></p>
+          <div class="modal-bio" id="modal-bio"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
+
 </html>

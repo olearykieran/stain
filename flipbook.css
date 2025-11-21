@@ -1,0 +1,166 @@
+/* Flip Book Styles */
+#book-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #fdfbf7;
+    /* Match paper color to hide glitches */
+}
+
+.page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+    background-color: #fdfbf7;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    /* Default state: off-screen to the right */
+    transform: translateX(100%);
+    z-index: 1;
+}
+
+#book-container.initializing .page {
+    transition: none !important;
+}
+
+/* Active Page: Centered */
+.page.active {
+    transform: translateX(0);
+    z-index: 10;
+}
+
+/* Left Page: Off-screen to the left */
+.page.left {
+    transform: translateX(-100%);
+    z-index: 1;
+}
+
+/* Right Page: Off-screen to the right (default, but explicit class helps) */
+.page.right {
+    transform: translateX(100%);
+    z-index: 1;
+}
+
+/* Specific Backgrounds */
+#home {
+    background: url('public/stain-napkin.png') no-repeat center center;
+    background-size: cover;
+}
+
+#about {
+    /* Background handled by inner sections */
+    background: transparent;
+}
+
+#cast-crew {
+    background: linear-gradient(140deg, #5b0505 0%, #210000 100%);
+    background-color: #3b0101;
+}
+
+#gallery {
+    background-color: #fdfbf7;
+}
+
+#tickets {
+    background: url('public/stain-notbook.png') repeat center center;
+    background-size: cover;
+}
+
+#merch {
+    background: url('public/stain-napkin.png') repeat center center;
+    background-size: contain;
+    background-color: #fdfbf7;
+}
+
+
+/* Scroll Hint */
+.scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 10;
+    opacity: 0.8;
+}
+
+.scroll-hint span {
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.scroll-hint .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.scroll-hint .scroll-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: #fff;
+    animation: scrollDown 1.5s infinite;
+}
+
+@keyframes scrollDown {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(200%);
+    }
+}
+
+/* Specific Page Styles */
+#about .content-section {
+    background: rgba(0, 0, 0, 0.6);
+    /* Overlay for readability */
+    min-height: 100%;
+}
+
+/* Adjust existing sections to fit full height if needed */
+.hero,
+.content-section,
+.gallery-section {
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Ensure Navbar stays on top */
+.navbar {
+    z-index: 100;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .page.flipped {
+        transform: translateX(-100%);
+        /* Slide instead of flip on mobile? Or keep flip? */
+        /* Let's try to keep flip but maybe less dramatic or just slide for usability */
+        /* transform: rotateY(-180deg); */
+    }
+
+    /* If flip is too heavy for mobile, we can switch to slide: */
+    /* 
+    .page { transform-origin: center; }
+    .page.flipped { transform: translateX(-100%); }
+    */
+}
