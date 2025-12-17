@@ -48,8 +48,20 @@
 
 /* Specific Backgrounds */
 #home {
-    background: url('public/stain-napkin.png') no-repeat center center;
+    background: url('/stain-napkin-optimized.jpg') no-repeat center center;
     background-size: cover;
+    background-position: center center;
+    background-attachment: scroll; /* Better for mobile performance */
+}
+
+/* Mobile optimization for hero background */
+@media (max-width: 768px) {
+    #home {
+        background-size: cover;
+        background-position: center center; /* Keep centered on mobile */
+        min-height: 100vh;
+        min-height: 100dvh; /* Dynamic viewport height for mobile browsers */
+    }
 }
 
 #about {
@@ -67,12 +79,12 @@
 }
 
 #tickets {
-    background: url('public/stain-notbook.png') repeat center center;
+    background: url('/stain-notbook.png') repeat center center;
     background-size: cover;
 }
 
 #merch {
-    background: url('public/stain-napkin.png') repeat center center;
+    background: url('/stain-napkin.png') repeat center center;
     background-size: contain;
     background-color: #fdfbf7;
 }

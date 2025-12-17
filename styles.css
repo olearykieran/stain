@@ -499,10 +499,12 @@ a {
   left: 50%;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle,
-      rgba(255, 255, 255, 0.15) 0%,
-      rgba(255, 255, 255, 0.08) 30%,
-      transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.08) 30%,
+    transparent 70%
+  );
   transform: translate(-50%, -50%);
   opacity: 0;
   pointer-events: none;
@@ -522,7 +524,6 @@ a {
 }
 
 @keyframes spotlightPulse {
-
   0%,
   100% {
     transform: translate(-50%, -50%) scale(1);
@@ -735,7 +736,7 @@ a {
 }
 
 /* Center the last item (7th item) in a 3-column grid */
-.cast-grid>article:last-child {
+.cast-grid > article:last-child {
   grid-column: 2;
 }
 
@@ -797,6 +798,11 @@ a {
 }
 
 /* Individual photo adjustments for better head centering */
+.cast-card:nth-child(1) .cast-photo img {
+  /* Negin Poure - start from top of photo */
+  object-position: center 0%;
+}
+
 .cast-card:nth-child(2) .cast-photo img {
   /* Hera Güneş Barlowe - adjust to show full head */
   object-position: center 5%;
@@ -911,7 +917,7 @@ a {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .cast-grid>article:last-child {
+  .cast-grid > article:last-child {
     grid-column: 1 / span 2;
     /* Center last item on 2-col grid */
   }
@@ -922,7 +928,7 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .cast-grid>article:last-child {
+  .cast-grid > article:last-child {
     grid-column: auto;
   }
 }
@@ -1022,6 +1028,11 @@ a {
 }
 
 /* Individual modal photo adjustments matching cast grid */
+#cast-modal[data-card="1"] .modal-photo img {
+  /* Negin */
+  object-position: center 0%;
+}
+
 #cast-modal[data-card="2"] .modal-photo img {
   /* Hera */
   object-position: center 5%;
@@ -1152,9 +1163,11 @@ a {
   right: 4%;
   width: 160px;
   height: 160px;
-  background: radial-gradient(circle at 50% 50%,
-      rgba(138, 18, 18, 0.08),
-      transparent 60%);
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(138, 18, 18, 0.08),
+    transparent 60%
+  );
   opacity: 0.15;
   pointer-events: none;
 }
@@ -1167,7 +1180,7 @@ a {
   position: relative;
   padding: var(--section-padding);
   min-height: 100vh;
-  background: url("public/locker2.jpeg") center center / cover no-repeat;
+  background: url("/locker2.jpeg") center center / cover no-repeat;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -1188,9 +1201,7 @@ a {
   padding: 3.5rem 3rem 3rem;
   max-width: 380px;
   text-align: left;
-  box-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.25),
-    0 0 0 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.1);
   position: relative;
   transform: rotate(-1.5deg);
   transition: transform 0.2s ease;
@@ -1297,13 +1308,15 @@ a {
   height: 80px;
   z-index: 3;
   opacity: 0.4;
-  background: repeating-linear-gradient(0deg,
-      transparent,
-      transparent 6px,
-      rgba(0, 0, 0, 0.4) 6px,
-      rgba(0, 0, 0, 0.4) 8px,
-      rgba(255, 255, 255, 0.05) 8px,
-      rgba(255, 255, 255, 0.05) 9px);
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 6px,
+    rgba(0, 0, 0, 0.4) 6px,
+    rgba(0, 0, 0, 0.4) 8px,
+    rgba(255, 255, 255, 0.05) 8px,
+    rgba(255, 255, 255, 0.05) 9px
+  );
   border-radius: 4px;
 }
 
@@ -1619,7 +1632,6 @@ a {
    =================================== */
 
 @media (max-width: 768px) {
-
   /* Navigation */
   .navbar {
     background: rgba(102, 0, 0, 0.95);

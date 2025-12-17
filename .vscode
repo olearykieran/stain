@@ -1,0 +1,48 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Codex terminal",
+      "type": "shell",
+      "command": "",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "codex"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Claude terminal",
+      "type": "shell",
+      "command": "",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "claude"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Dev server",
+      "type": "shell",
+      "command": "npm run dev",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "dev"
+      },
+      "isBackground": false,
+      "problemMatcher": []
+    },
+    {
+      "label": "Open all project terminals",
+      "dependsOn": [
+        "Codex terminal",
+        "Claude terminal",
+        "Dev server"
+      ],
+      "dependsOrder": "parallel"
+    }
+  ]
+}
