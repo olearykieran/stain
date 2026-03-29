@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const aboutPage = document.getElementById('about');
     const castCrewPage = document.getElementById('cast-crew');
     const galleryPage = document.getElementById('gallery');
-    const merchPage = document.getElementById('merch');
 
     // Play video when loaded
     if (splashVideo) {
@@ -27,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Flip Book Navigation Logic
-    const pages = ['home', 'about', 'cast-crew', 'gallery', 'tickets', 'merch'];
+    const pages = ['home', 'about', 'cast-crew', 'gallery', 'tickets'];
     const navLinks = document.querySelectorAll('[data-target]');
     let activePage = 'home';
     const lightModePages = new Set(['about', 'cast-crew', 'tickets']);
@@ -41,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const isAboutScrolled = activePage === 'about' && aboutPage && aboutPage.scrollTop > 10;
         const isCastCrewScrolled = activePage === 'cast-crew' && castCrewPage && castCrewPage.scrollTop > 10;
         const isGalleryScrolled = activePage === 'gallery' && galleryPage && galleryPage.scrollTop > 10;
-        const isMerchScrolled = activePage === 'merch' && merchPage && merchPage.scrollTop > 10;
+        const isMerchScrolled = false;
 
         if (isAboutScrolled || isCastCrewScrolled) {
             navbar.classList.add('about-scrolled');
@@ -143,11 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    if (merchPage) {
-        merchPage.addEventListener('scroll', () => {
-            updateAboutNavbarState();
-        });
-    }
 
     // Mobile Menu Toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-toggle');

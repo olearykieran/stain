@@ -660,6 +660,59 @@ a {
    About Page
    =================================== */
 
+/* Writers section — replaces stain-cast.jpg (4000×2250, 16:9) */
+.writers-section {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #fdfbf7;
+  display: grid;
+  grid-template-columns: 45% 55%;
+  align-items: center;
+  padding: 4rem 3rem 4rem 5vw;
+  gap: 3rem;
+}
+
+.writers-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.writers-question {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.6rem, 3.2vw, 3.8rem);
+  text-transform: uppercase;
+  color: #8a1212;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.writers-description {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: clamp(0.8rem, 1vw, 0.95rem);
+  line-height: 1.7;
+  color: #1a1a1a;
+  max-width: 44ch;
+}
+
+.writers-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-self: center;
+  padding: 3rem 0;
+}
+
+.writers-photos img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
 .about-image-container {
   position: relative;
   width: 100%;
@@ -713,6 +766,19 @@ a {
 
 .cast-crew-section .section-title::after {
   background: rgba(255, 255, 255, 0.8);
+}
+
+.cast-photo--empty {
+  background: #4a4a4a;
+  cursor: default;
+}
+
+.cast-card--placeholder:hover {
+  transform: none;
+}
+
+.cast-card--placeholder .cast-photo--empty:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .cast-intro {
